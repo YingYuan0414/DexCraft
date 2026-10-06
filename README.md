@@ -1,13 +1,31 @@
-# DexCraft
+# From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation
 
-DexCraft is a simulated benchmark of dexterous tool use on an xArm6 + LEAP hand, built on
-[ManiSkill3](https://github.com/haosulab/ManiSkill). In each task the robot picks up an articulated tool, moves
-it to a goal pose (green ghost), and actuates it. This repository contains
+**Ying Yuan, Xinyu Liu, Sriram Krishna, David Held** · CoRL 2026
 
-1. the six DexCraft tasks, keyboard teleoperation, and a [MimicGen](https://github.com/NVlabs/mimicgen) pipeline
-   that turns a handful of teleoperated demos into large datasets;
-2. a script that turns [Dexonomy](https://github.com/JYChen18/DexLearn) grasps into hand-object trajectories
-   (floating Shadow hand) for pre-training.
+[[Paper]](https://arxiv.org/abs/2606.30749) [[Website]](https://yingyuan0414.github.io/grasp2dexterity/) [[Data]](https://huggingface.co/datasets/YingYuan0414/DexCraft)
+
+<p align="center">
+  <img src="docs/dexcraft_tasks.gif" alt="The six DexCraft tasks" width="720">
+</p>
+
+Large-scale dexterous grasp datasets encode rich priors over hand-object interaction. We show that they can also
+support *functional* dexterity in articulated tool use, where a robot must acquire a tool, maintain contact, and
+operate its moving parts. We build a 355k-trajectory grasp-pretraining dataset from
+[Dexonomy](https://github.com/JYChen18/DexLearn) grasp annotations, use it to pretrain the low-level goal-conditioned
+controller of a hierarchical policy (high-level hand sub-goal prediction + low-level control), and fine-tune on
+downstream task demonstrations. To evaluate this setting we introduce **DexCraft**, a simulation benchmark of six
+articulated tool-use tasks on an xArm6 + LEAP hand.
+
+This repository contains
+
+1. **DexCraft**: the six tasks (built on [ManiSkill3](https://github.com/haosulab/ManiSkill)), keyboard
+   teleoperation, and the [MimicGen](https://github.com/NVlabs/mimicgen) pipeline that turns a handful of
+   teleoperated demos into large datasets;
+2. **Grasp-pretraining data**: the script that turns Dexonomy grasps into hand-object trajectories (floating
+   Shadow hand).
+
+In each DexCraft task the robot grasps an articulated tool, moves it to a goal pose (green ghost in the GIF), and
+actuates its joint:
 
 | Task             | Tool              | Success: tool at goal pose (≤ 4 cm, ≤ 30°) and ... |
 |------------------|-------------------|-----------------------------------------------------|
@@ -140,6 +158,7 @@ dexcraft/
 scripts/       teleop, replay, MimicGen pipeline, Dexonomy collection
 configs/       MimicGen generation configs
 assets/        robot and PartNet-Mobility object models
+docs/          README figures
 ```
 
 ## Citation
