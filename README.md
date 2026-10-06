@@ -56,7 +56,7 @@ python scripts/run_env.py --env-id SprayBottle-v1 --obs-mode pointcloud --steps 
 
 The source demos used in the paper (5 per task) and the generated datasets are on Hugging Face:
 ```sh
-huggingface-cli download <HF_REPO> --repo-type dataset --local-dir .
+huggingface-cli download YingYuan0414/DexCraft --repo-type dataset --local-dir . --include "demos/*" "generated/*"
 ```
 This gives `demos/<task>/teleop/` (raw teleoperation), `demos/<task>/source/` (processed, steps 1-5
 below already done, so you can skip directly to step 6) and `generated/<task>/` (step 6 already done).
@@ -145,5 +145,11 @@ assets/        robot and PartNet-Mobility object models
 ## Citation
 
 ```bibtex
-TODO
+@inproceedings{yuan2026grasps,
+  title={From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation},
+  author={Ying Yuan and Xinyu Liu and Sriram Krishna and David Held},
+  booktitle={Conference on Robot Learning (CoRL)},
+  year={2026},
+  note={To appear}
+}
 ```
