@@ -1,0 +1,16 @@
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+.pixi
+*.egg-info/
+
+# data and outputs
+/demos/
+/outputs/
+/data/
+*.mp4
+wandb/

@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<robot name="shadow_right">
+  <group name="arm">
+    <joint name="root_x_axis_joint"/>
+    <joint name="root_y_axis_joint"/>
+    <joint name="root_z_axis_joint"/>
+    <joint name="root_z_rot_joint"/>
+    <joint name="root_y_rot_joint"/>
+    <joint name="root_x_rot_joint"/>
+  </group>
+  <group name="hand">
+    <joint name="FFJ4"/>
+    <joint name="FFJ3"/>
+    <joint name="FFJ2"/>
+    <joint name="FFJ1"/>
+    <joint name="FFtip"/>
+    <joint name="MFJ4"/>
+    <joint name="MFJ3"/>
+    <joint name="MFJ2"/>
+    <joint name="MFJ1"/>
+    <joint name="MFtip"/>
+    <joint name="RFJ4"/>
+    <joint name="RFJ3"/>
+    <joint name="RFJ2"/>
+    <joint name="RFJ1"/>
+    <joint name="RFtip"/>
+    <joint name="LFJ5"/>
+    <joint name="LFJ4"/>
+    <joint name="LFJ3"/>
+    <joint name="LFJ2"/>
+    <joint name="LFJ1"/>
+    <joint name="LFtip"/>
+    <joint name="THJ5"/>
+    <joint name="THJ4"/>
+    <joint name="THJ3"/>
+    <joint name="THJ2"/>
+    <joint name="THJ1"/>
+    <joint name="THtip"/>
+  </group>
+  <group_state name="home" group="arm">
+    <joint name="root_x_axis_joint" value="-0.615"/>
+    <joint name="root_y_axis_joint" value="0"/>
+    <joint name="root_z_axis_joint" value="0.1"/>
+    <joint name="root_x_rot_joint" value="1.571"/>
+    <joint name="root_y_rot_joint" value="0"/>
+    <joint name="root_z_rot_joint" value="1.571"/>
+    </group_state>
+  
+  <end_effector name="palm" parent_link="root_arm_1_link_5" group="hand"/>
+  
+  <!-- Disable all self-collisions -->
+  <disable_collisions link1="palm" link2="ffproximal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="ffmiddle" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="ffdistal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="mfproximal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="mfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="mfdistal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="rfproximal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="rfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="palm" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="ffproximal" link2="ffmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="ffdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="mfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="mfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="mfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="rfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="rfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffproximal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="ffmiddle" link2="ffdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="mfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="mfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="mfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="rfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="rfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffmiddle" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="ffdistal" link2="mfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="mfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="mfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="rfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="rfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="ffdistal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="mfproximal" link2="mfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="mfdistal" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="rfproximal" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="rfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfproximal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="mfmiddle" link2="mfdistal" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="rfproximal" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="rfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfmiddle" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="mfdistal" link2="rfproximal" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="rfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="mfdistal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="rfproximal" link2="rfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="rfproximal" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="rfproximal" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="rfproximal" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="rfproximal" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="rfproximal" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="rfproximal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="rfproximal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="rfproximal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="rfmiddle" link2="rfdistal" reason="ignore_self"/>
+  <disable_collisions link1="rfmiddle" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="rfmiddle" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="rfmiddle" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="rfmiddle" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="rfmiddle" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="rfmiddle" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="rfmiddle" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="rfdistal" link2="lfmetacarpal" reason="ignore_self"/>
+  <disable_collisions link1="rfdistal" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="rfdistal" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="rfdistal" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="rfdistal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="rfdistal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="rfdistal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="lfmetacarpal" link2="lfproximal" reason="ignore_self"/>
+  <disable_collisions link1="lfmetacarpal" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="lfmetacarpal" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="lfmetacarpal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="lfmetacarpal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="lfmetacarpal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="lfproximal" link2="lfmiddle" reason="ignore_self"/>
+  <disable_collisions link1="lfproximal" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="lfproximal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="lfproximal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="lfproximal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="lfmiddle" link2="lfdistal" reason="ignore_self"/>
+  <disable_collisions link1="lfmiddle" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="lfmiddle" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="lfmiddle" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="lfdistal" link2="thhub" reason="ignore_self"/>
+  <disable_collisions link1="lfdistal" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="lfdistal" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="thhub" link2="thmiddle" reason="ignore_self"/>
+  <disable_collisions link1="thhub" link2="thdistal" reason="ignore_self"/>
+
+  <disable_collisions link1="thmiddle" link2="thdistal" reason="ignore_self"/>
+</robot>
