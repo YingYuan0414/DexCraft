@@ -54,12 +54,13 @@ python scripts/run_env.py --env-id SprayBottle-v1 --obs-mode pointcloud --steps 
 
 ## Generating demos with MimicGen
 
-The source demos used in the paper (5 per task) are on Hugging Face. Download them into `demos/`:
+The source demos used in the paper (5 per task) and the generated datasets are on Hugging Face:
 ```sh
 huggingface-cli download <HF_REPO> --repo-type dataset --local-dir .
 ```
-This gives `demos/<task>/teleop/` (raw teleoperation) and `demos/<task>/source/` (processed, steps 1-5
-below already done), so you can skip directly to step 6. Steps 1-5 show how to make source demos yourself.
+This gives `demos/<task>/teleop/` (raw teleoperation), `demos/<task>/source/` (processed, steps 1-5
+below already done, so you can skip directly to step 6) and `generated/<task>/` (step 6 already done).
+Steps 1-5 show how to make source demos yourself.
 
 The commands use `SprayBottle-v1`; the MimicGen config names are `spray_bottle`, `lighter`, `dispenser`,
 `pen`, `pliers` and `stapler`.
@@ -98,10 +99,16 @@ The commands use `SprayBottle-v1`; the MimicGen config names are `spray_bottle`,
    python scripts/mimicgen/generate_dataset.py --config configs/mimicgen/spray_bottle.json --num_demos 100 --auto-remove-exp
    ```
 
-7. **Render observations** (point clouds, hand keypoints and per-subtask goal hand keypoints `goal_gripper_pcd`):
+7. **Render observations** (point clouds, hand keypoints and per-subtask goal hand keypoints `goal_gripper_pcd`).
+   The generated datasets used in the paper (500 training + 200 validation demos per task) are in the same
+   Hugging Face dataset under `generated/<task>/demo.hdf5` and `demo_val.hdf5`; they store states and actions,
+   and this step renders their observations.
    ```sh
    python scripts/mimicgen/dataset_states_to_obs.py --input outputs/mimicgen/spray_bottle/demo.hdf5 \
        --output outputs/mimicgen/spray_bottle/demo_obs.hdf5 --num_workers 8
+   # or, for the released dataset
+   python scripts/mimicgen/dataset_states_to_obs.py --input generated/SprayBottle-v1/demo.hdf5 \
+       --output generated/SprayBottle-v1/demo_obs.hdf5 --num_workers 8
    ```
 
 ## Dexonomy trajectories for pre-training

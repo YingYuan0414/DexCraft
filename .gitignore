@@ -14,3 +14,4 @@ __pycache__/
 /data/
 *.mp4
 wandb/
+/generated/
