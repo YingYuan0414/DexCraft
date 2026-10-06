@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use DexCraft in your research, please cite our paper."
+title: "DexCraft"
+type: software
+authors:
+  - family-names: Yuan
+    given-names: Ying
+  - family-names: Liu
+    given-names: Xinyu
+  - family-names: Krishna
+    given-names: Sriram
+  - family-names: Held
+    given-names: David
+repository-code: "https://github.com/YingYuan0414/DexCraft"
+url: "https://yingyuan0414.github.io/grasp2dexterity/"
+
+preferred-citation:
+  type: conference-paper
+  title: "From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation"
+  authors:
+    - family-names: Yuan
+      given-names: Ying
+    - family-names: Liu
+      given-names: Xinyu
+    - family-names: Krishna
+      given-names: Sriram
+    - family-names: Held
+      given-names: David
+  conference:
+    name: "Conference on Robot Learning"
+  year: 2026
