@@ -1,6 +1,6 @@
 # From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation
 
-**Ying Yuan, Xinyu Liu, Sriram Krishna, David Held** · CoRL 2026
+**Ying Yuan\*, Xinyu Liu\*, Sriram Krishna, David Held** · CoRL 2026
 
 [[Paper]](https://arxiv.org/abs/2606.30749) [[Website]](https://yingyuan0414.github.io/grasp2dexterity/) [[Data]](https://huggingface.co/datasets/YingYuan0414/DexCraft)
 
